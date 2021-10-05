@@ -3,12 +3,13 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Clock</h5>
-        <div>
-          {{ moment().format('MMMM Do YYYY') }}
+        <div v-show="!show">
+          {{ moment().format("MMMM Do YYYY") }}
         </div>
         <div>
           {{ dateTime.hours }}:{{ dateTime.minutes }}:{{ dateTime.seconds }}
         </div>
+        <button click="show = !show">show</button>
       </div>
     </div>
   </div>
@@ -25,6 +26,8 @@ export default {
 
   data() {
     return {
+      show: false,
+
       moment: moment,
 
       dateTime: {
