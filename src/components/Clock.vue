@@ -4,6 +4,9 @@
       <div class="card-body">
         <h5 class="card-title">Clock</h5>
         <div>
+          {{ moment().format('MMMM Do YYYY') }}
+        </div>
+        <div>
           {{ dateTime.hours }}:{{ dateTime.minutes }}:{{ dateTime.seconds }}
         </div>
       </div>
@@ -13,6 +16,8 @@
 
 
 <script>
+//var moment = require("vue-moment");
+var moment = require("moment");
 const date = new Date();
 
 export default {
@@ -20,6 +25,8 @@ export default {
 
   data() {
     return {
+      moment: moment,
+
       dateTime: {
         hours: date.getHours(),
         minutes: date.getMinutes(),
@@ -44,5 +51,9 @@ export default {
   beforeUnmount() {
     clearInterval(this.timer);
   },
+
+  // if (value) {
+  //    return moment(String(value)).format('MM/DD/YYYY')
+  // }
 };
 </script>
