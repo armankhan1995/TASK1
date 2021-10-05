@@ -9,7 +9,7 @@
         <div>
           {{ dateTime.hours }}:{{ dateTime.minutes }}:{{ dateTime.seconds }}
         </div>
-        <button click="show = !show">show</button>
+        <button v-on:click="show = !show">show</button>
       </div>
     </div>
   </div>
